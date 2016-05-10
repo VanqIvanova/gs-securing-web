@@ -16,5 +16,23 @@
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
+
+<form  th:action="@{/registration}" method="post" th:object="${user}">
+    <div class="input_field">
+        <label for="username" th:text="Username"></label>
+        <input id="username"  th:field="*{username}"/>
+    </div>
+    <div class="input_field">
+        <label for="email" th:text="Email"></label>
+        <input id="email" name="email" type="email" th:field="*{email}"/>
+    </div>
+    <div class="input_field">
+        <label for="password" th:text="Password"></label>
+        <input id="password" name="password" type="password" th:field="*{password}"/>
+    </div>
+    <div class="input_field">
+        <input type="submit" th:value="#{registration}"/>
+    </div>
+</form>
 </body>
 </html>
